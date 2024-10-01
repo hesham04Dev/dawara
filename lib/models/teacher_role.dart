@@ -8,17 +8,17 @@ part 'teacher_role.g.dart';
 
 @JsonSerializable()
 class TeacherRole {
-  final int id;
-  final Season season;
-  final Teacher teacher;
-  final Group? group;
-  final Material? material;
+  final int d_id;
+  final Season d_season;
+  final Teacher d_teacher;
+  final Group? d_group;
+  final Material? d_material;
   TeacherRole(
-      {required this.teacher,
-        this.group,
-        this.material,
-        required this.id,
-        required this.season});
+      {required this.d_teacher,
+        this.d_group,
+        this.d_material,
+        required this.d_id,
+        required this.d_season});
 
   factory TeacherRole.fromJson(Map<String, dynamic> json) =>
       _$TeacherRoleFromJson(json);

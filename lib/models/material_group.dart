@@ -5,9 +5,9 @@ part 'material_group.g.dart';
 
 @JsonSerializable()
 class MaterialGroup {
-  final Group group;
-  final Material material;
-  MaterialGroup({required this.material, required this.group});
+  final Group d_group;
+  final Material d_material;
+  MaterialGroup({required this.d_material, required this.d_group});
 
   factory MaterialGroup.fromJson(Map<String, dynamic> json) =>
       _$MaterialGroupFromJson(json);

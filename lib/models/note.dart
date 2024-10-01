@@ -4,12 +4,12 @@ part 'note.g.dart';
 
 @JsonSerializable()
 class Note{
-  final int id;
-  final Student student;
+  final int d_id;
+  final Student d_student;
   final String description;
-  final DateTime date;
+  final DateTime d_date;
 
-  Note({required this.date,required this.description,required this.id,required this.student});
+  Note({required this.d_date,required this.description,required this.d_id,required this.d_student});
 
   factory Note.fromJson(Map<String, dynamic> json) =>
       _$NoteFromJson(json);

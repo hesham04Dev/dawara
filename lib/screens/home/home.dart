@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
        // List<MaterialMark> marks = DSql.instance().select("Select * from d_material_mark where d_season_student = ?",[students[index].id]);
         //TODO get marks for each student in the group of this teacher
 
-        return StudentCard(studentName: students[index].name, marks:[]) ;
+        return StudentCard(studentName: students[index].d_name, marks:[]) ;
 
         },),
     );

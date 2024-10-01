@@ -7,11 +7,11 @@ part of 'season.dart';
 // **************************************************************************
 
 Season _$SeasonFromJson(Map<String, dynamic> json) => Season(
-      id: (json['id'] as num).toInt(),
-      name: json['name'] as String,
+      d_id: (json['d_id'] as num).toInt(),
+      d_name: json['d_name'] as String,
     );
 
 Map<String, dynamic> _$SeasonToJson(Season instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
+      'd_id': instance.d_id,
+      'd_name': instance.d_name,
     };

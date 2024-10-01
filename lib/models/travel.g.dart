@@ -7,19 +7,19 @@ part of 'travel.dart';
 // **************************************************************************
 
 Travel _$TravelFromJson(Map<String, dynamic> json) => Travel(
-      id: (json['id'] as num).toInt(),
-      location: json['location'] as String,
-      price: json['price'] as String,
-      duration: json['duration'] as String,
-      totalCost: (json['totalCost'] as num).toDouble(),
-      season: Season.fromJson(json['season'] as Map<String, dynamic>),
+      d_id: (json['d_id'] as num).toInt(),
+      d_location: json['d_location'] as String,
+      d_price: json['d_price'] as String,
+      d_duration: json['d_duration'] as String,
+      d_totalCost: (json['d_totalCost'] as num).toDouble(),
+      d_season: Season.fromJson(json['d_season'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$TravelToJson(Travel instance) => <String, dynamic>{
-      'id': instance.id,
-      'location': instance.location,
-      'price': instance.price,
-      'duration': instance.duration,
-      'season': instance.season,
-      'totalCost': instance.totalCost,
+      'd_id': instance.d_id,
+      'd_location': instance.d_location,
+      'd_price': instance.d_price,
+      'd_duration': instance.d_duration,
+      'd_season': instance.d_season,
+      'd_totalCost': instance.d_totalCost,
     };

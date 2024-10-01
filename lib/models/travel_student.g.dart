@@ -8,12 +8,12 @@ part of 'travel_student.dart';
 
 TravelStudent _$TravelStudentFromJson(Map<String, dynamic> json) =>
     TravelStudent(
-      student: SeasonStudent.fromJson(json['student'] as Map<String, dynamic>),
+      d_seasonStudent: SeasonStudent.fromJson(json['student'] as Map<String, dynamic>),
       travel: Travel.fromJson(json['travel'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$TravelStudentToJson(TravelStudent instance) =>
     <String, dynamic>{
-      'student': instance.student,
+      'student': instance.d_seasonStudent,
       'travel': instance.travel,
     };

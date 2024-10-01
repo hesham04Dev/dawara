@@ -7,14 +7,14 @@ part of 'attendance.dart';
 // **************************************************************************
 
 Attendance _$AttendanceFromJson(Map<String, dynamic> json) => Attendance(
-      date: DateTime.parse(json['date'] as String),
-      id: (json['id'] as num).toInt(),
-      student: SeasonStudent.fromJson(json['student'] as Map<String, dynamic>),
+      d_date: DateTime.parse(json['d_date'] as String),
+      d_id: (json['d_id'] as num).toInt(),
+      d_seasonStudent: SeasonStudent.fromJson(json['student'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AttendanceToJson(Attendance instance) =>
     <String, dynamic>{
-      'id': instance.id,
-      'student': instance.student,
-      'date': instance.date.toIso8601String(),
+      'd_id': instance.d_id,
+      'student': instance.d_seasonStudent,
+      'd_date': instance.d_date.toIso8601String(),
     };

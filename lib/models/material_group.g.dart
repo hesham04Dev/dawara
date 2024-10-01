@@ -8,12 +8,12 @@ part of 'material_group.dart';
 
 MaterialGroup _$MaterialGroupFromJson(Map<String, dynamic> json) =>
     MaterialGroup(
-      material: Material.fromJson(json['material'] as Map<String, dynamic>),
-      group: Group.fromJson(json['group'] as Map<String, dynamic>),
+      d_material: Material.fromJson(json['d_material'] as Map<String, dynamic>),
+      d_group: Group.fromJson(json['d_group'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$MaterialGroupToJson(MaterialGroup instance) =>
     <String, dynamic>{
-      'group': instance.group,
-      'material': instance.material,
+      'd_group': instance.d_group,
+      'd_material': instance.d_material,
     };

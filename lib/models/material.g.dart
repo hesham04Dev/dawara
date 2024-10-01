@@ -7,11 +7,11 @@ part of 'material.dart';
 // **************************************************************************
 
 Material _$MaterialFromJson(Map<String, dynamic> json) => Material(
-      name: json['name'] as String,
-      id: (json['id'] as num).toInt(),
+      d_name: json['d_name'] as String,
+      d_id: (json['d_id'] as num).toInt(),
     );
 
 Map<String, dynamic> _$MaterialToJson(Material instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
+      'd_id': instance.d_id,
+      'd_name': instance.d_name,
     };

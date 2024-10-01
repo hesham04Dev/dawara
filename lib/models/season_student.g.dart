@@ -8,18 +8,18 @@ part of 'season_student.dart';
 
 SeasonStudent _$SeasonStudentFromJson(Map<String, dynamic> json) =>
     SeasonStudent(
-      student: Student.fromJson(json['student'] as Map<String, dynamic>),
-      season: Season.fromJson(json['season'] as Map<String, dynamic>),
-      paid: (json['paid'] as num).toDouble(),
-      price: (json['price'] as num).toDouble(),
-      group: Group.fromJson(json['group'] as Map<String, dynamic>),
+      d_student: Student.fromJson(json['student'] as Map<String, dynamic>),
+      d_season: Season.fromJson(json['d_season'] as Map<String, dynamic>),
+      d_paid: (json['d_paid'] as num).toDouble(),
+      d_price: (json['price'] as num).toDouble(),
+      d_group: Group.fromJson(json['d_group'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$SeasonStudentToJson(SeasonStudent instance) =>
     <String, dynamic>{
-      'student': instance.student,
-      'season': instance.season,
-      'paid': instance.paid,
-      'price': instance.price,
-      'group': instance.group,
+      'student': instance.d_student,
+      'd_season': instance.d_season,
+      'd_paid': instance.d_paid,
+      'price': instance.d_price,
+      'd_group': instance.d_group,
     };

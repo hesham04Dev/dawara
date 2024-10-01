@@ -22,7 +22,7 @@ class StudentCard extends StatelessWidget {
           children: List.generate(
             marks.length,
             (index) =>
-                Text("${marks[index].material.name}:${marks[index].mark}"),
+                Text("${marks[index].d_material.d_name}:${marks[index].mark}"),
           ),
         )
       ],

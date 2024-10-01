@@ -5,13 +5,13 @@ part 'group.g.dart';
 
 @JsonSerializable()
 class Group {
-  final int id;
-  final Season season;
-  final String name;
+  final int d_id;
+  final Season d_season;
+  final String d_name;
   Group({
-    required this.season,
-    required this.id,
-    required this.name,
+    required this.d_season,
+    required this.d_id,
+    required this.d_name,
   });
   
   factory Group.fromJson(Map<String, dynamic> json) =>
@@ -19,24 +19,24 @@ class Group {
   Map<String, dynamic> toJson() => _$GroupToJson(this);
 }
 
-//note admin is a group called admin so every season we have new group called admin
+//note admin is a d_group called admin so every d_season we have new d_group called admin
 /*class MaterialGroup {
-  final Group group;
-  final Material material;
-  MaterialGroup({required this.material, required this.group});
+  final Group d_group;
+  final Material d_material;
+  MaterialGroup({required this.d_material, required this.d_group});
 }
-not is moved to material group
+not is moved to d_material d_group
 */
 //not added to db
 // class GivenInGroup {
 //   final String description;
-//   final String date;
-//   final Group group;
-//   final int id;
+//   final String d_date;
+//   final Group d_group;
+//   final int d_id;
 //
 //   GivenInGroup(
-//       {required this.group,
+//       {required this.d_group,
 //       required this.description,
-//       required this.date,
-//       required this.id});
+//       required this.d_date,
+//       required this.d_id});
 // }

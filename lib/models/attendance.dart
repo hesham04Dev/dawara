@@ -4,11 +4,11 @@ part 'attendance.g.dart';
 
 @JsonSerializable()
 class Attendance{
-  final int id;
-  final SeasonStudent student;
-  final DateTime date;
-  Attendance({required this.date,
-    required this.id,required this.student});
+  final int d_id;
+  final SeasonStudent d_seasonStudent;
+  final DateTime d_date;
+  Attendance({required this.d_date,
+    required this.d_id,required this.d_seasonStudent});
 
   factory Attendance.fromJson(Map<String, dynamic> json) =>
       _$AttendanceFromJson(json);

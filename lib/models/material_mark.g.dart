@@ -8,13 +8,13 @@ part of 'material_mark.dart';
 
 MaterialMark _$MaterialMarkFromJson(Map<String, dynamic> json) => MaterialMark(
       mark: (json['mark'] as num).toDouble(),
-      student: SeasonStudent.fromJson(json['student'] as Map<String, dynamic>),
-      material: Material.fromJson(json['material'] as Map<String, dynamic>),
+  d_seasonStudent: SeasonStudent.fromJson(json['student'] as Map<String, dynamic>),
+      d_material: Material.fromJson(json['d_material'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$MaterialMarkToJson(MaterialMark instance) =>
     <String, dynamic>{
-      'student': instance.student,
-      'material': instance.material,
+      'student': instance.d_seasonStudent,
+      'd_material': instance.d_material,
       'mark': instance.mark,
     };

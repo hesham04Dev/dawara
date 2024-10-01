@@ -3,9 +3,9 @@ part 'material.g.dart';
 
 @JsonSerializable()
 class Material {
-  final int id;
-  final String name;
-  Material({required this.name, required this.id});
+  final int d_id;
+  final String d_name;
+  Material({required this.d_name, required this.d_id});
 
   factory Material.fromJson(Map<String, dynamic> json) =>
       _$MaterialFromJson(json);

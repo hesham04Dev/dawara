@@ -6,12 +6,12 @@ part 'season_student.g.dart';
 
 @JsonSerializable()
 class SeasonStudent{
-  final Student student;
-  final Season season;
-  final double paid;
-  final double price;
-  final Group group;
-  SeasonStudent({required this.student, required this.season,required this.paid,required this.price,required this.group});
+  final Student d_student;
+  final Season d_season;
+  final double d_paid;
+  final double d_price;
+  final Group d_group;
+  SeasonStudent({required this.d_student, required this.d_season,required this.d_paid,required this.d_price,required this.d_group});
 
   factory SeasonStudent.fromJson(Map<String, dynamic> json) =>
       _$SeasonStudentFromJson(json);

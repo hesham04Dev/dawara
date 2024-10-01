@@ -5,17 +5,17 @@ part 'student.g.dart';
 
 @JsonSerializable()
 class Student{
-  final int id;
-  final String name;
-  final int age;
-  final String phone;
-  final String address;
-  final String? problem;
-  Student({ required this.phone,
-   required this.address, this.problem, required this.id,required this.name,required this.age});
+  final int d_id;
+  final String d_name;
+  final int d_age;
+  final String d_phone;
+  final String d_address;
+  final String? d_problem;
+  Student({ required this.d_phone,
+   required this.d_address, this.d_problem, required this.d_id,required this.d_name,required this.d_age});
 
   factory Student.fromJson(Map<String, dynamic> json) =>
       _$StudentFromJson(json);
   Map<String, dynamic> toJson() => _$StudentToJson(this);
 }
-//create view that return age of student
+//create view that return d_age of student
