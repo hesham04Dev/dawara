@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:dawara/db/mysql/connection.dart';
 import 'package:dawara/db/sqlite/connection.dart';
+import 'package:mysql_client/mysql_client.dart';
 
 import '../functions/common.dart';
 
@@ -21,14 +22,14 @@ abstract class DSql {
      List<Object?>? params,
 
    ]);
-   dynamic select(String query, [
+   dynamic select(String query, {
      List<Object?>? params,
-
-   ]);
+     Function(dynamic json)? fromJson,
+     bool print =false
+   });
 
 
    void show(resultSets);
-
 }
 dbInit() async{
   await MySql.init();

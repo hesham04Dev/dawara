@@ -3,6 +3,7 @@ import 'package:crypto/crypto.dart';
 
 import 'package:flutter/material.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import 'package:mysql_client/mysql_client.dart';
 
 import '../db/sql.dart';
 
@@ -36,10 +37,16 @@ offlineDb(){
 onlineDb(){
   return DSql.onlineInstance?.connection;
 }
-listFromJson(List list,model){
+/*listFromJson(List list,model){
   var instances =[];
   for(var item in list){
      instances.add(model.fromJson(item));
   }
   return instances;
+}*/
+List<T> listFromJson<T>(ResultSet list,
+    T Function(dynamic json) fromJson) {
+  DSql.instance().show(list);
+  return list.map((item)
+  => fromJson(item)).toList();
 }

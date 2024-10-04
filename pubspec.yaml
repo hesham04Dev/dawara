@@ -43,6 +43,7 @@ dependencies:
   internet_connection_checker_plus: ^2.5.2
   path_provider: ^2.1.4
   sqlite3_flutter_libs: ^0.5.24
+  provider: ^6.1.2
 
 
 dev_dependencies:

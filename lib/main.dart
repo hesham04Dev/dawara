@@ -5,9 +5,15 @@ import 'package:flutter/material.dart';
 
 import 'config/app_theme.dart';
 import 'db/mysql/connection.dart';
+import 'functions/common.dart';
+import 'models/student.dart';
 
 void main() async {
   await dbInit();
+  var x = await DSql.onlineInstance!.select(
+      "select * from current_student ",fromJson: (json) {
+    return Student.fromJson(json);});
+
   runApp(const MyApp());
 }
 

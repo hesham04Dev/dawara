@@ -1,5 +1,6 @@
 import 'package:dawara/db/sql.dart';
 import 'package:dawara/functions/common.dart';
+import 'package:dawara/models/teacher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mysql_client/mysql_client.dart';
@@ -77,11 +78,11 @@ class Login extends StatelessWidget {
                               //TODO get result from db if true store it
 
                              const  String query = "SELECT * from d_teacher where d_phone = ? and d_password =?";
-                             ResultSet? resultSets = await DSql.instance().select(query,[phone,password]);
-                             DSql.instance().show(resultSets);
-                              if(resultSets !=null){
+                             List<Teacher> teachers = await DSql.instance().select(query,params:[phone,password],fromJson: (json) => Teacher.fromJson(json),);
+
+                              if(teachers.isEmpty){
                                DSql.offlineInstance.connection
-                                   .execute("INSERT OR REPLACE INTO d_setting values(?,?,?)",[1,"teacherId",resultSets.rows.first.colByName("d_id")]);
+                                   .execute("INSERT OR REPLACE INTO d_setting values(?,?,?)",params:[1,"teacherId",teachers[0].d_id]);
                               }
                               goToWithReplacement(context, (context) => const Index(),);
                             }

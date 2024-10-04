@@ -19,10 +19,14 @@ class Sqlite extends DSql{
     // }
   }
   @override
-  dynamic select(String query, [
+  dynamic select(String query, {
     List<Object?>? params,
-    bool iterable = false,
-  ]){
+    Function(dynamic json)? fromJson,
+    bool print =false
+  }
+
+  ){
+    //TODO add the list result and printing
     return (DSql.instance().connection as Database).execute(query,params??[]);
   }
   @override

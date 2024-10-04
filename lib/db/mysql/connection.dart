@@ -23,18 +23,34 @@ class MySql extends DSql {
 
   @override
   dynamic select(
-    String query, [
+    String query, {
     List<Object?>? params,
-  ]) {
+    Function(dynamic json)? fromJson,
+    bool print =false
+}) async {
     Map<String, dynamic>? mapParams = _paramToMap(params);
     query = _mysqlParamFormatter(query);
+    var queryResult= await (DSql.instance().connection as MySQLConnection).execute(query, mapParams);
+    if(print) show(queryResult);
+    if(fromJson!=null){
+      return _list(fromJson,queryResult);
+    }
+    return queryResult;
+  }
+  @override
+  Future<List<T>> _list<T>(T Function(dynamic json) fromJson, IResultSet resultSets) async {
+    List<T> list = [];
+    for (final row in resultSets.rows) {
+      var json = row.assoc();
+      list.add(fromJson(json));
+    }
 
-    return (DSql.instance().connection as MySQLConnection).execute(query, mapParams);
+    return list;
   }
 
   @override
   void execute(String query, [List<Object?>? params]) {
-    select(query,params);
+    select(query,params: params);
   }
   @override
   void show(resultSets){
@@ -62,5 +78,6 @@ class MySql extends DSql {
     //print(result);
     return result;
   }
+
 
 }

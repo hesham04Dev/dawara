@@ -1,8 +1,10 @@
 import 'package:dawara/db/sql.dart';
 import 'package:dawara/functions/common.dart';
+import 'package:dawara/screens/home/provider/student_provider.dart';
 
 import 'package:dawara/screens/home/widgets/student_card.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../models/material_mark.dart';
 import '../../models/student.dart';
@@ -12,9 +14,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Student> students = /*listFromJson(DSql.instance().select(""
-        "select * from d_stu"),Student);*/
-    [];
+
+    List<Student> students = context.watch<StudentProvider>().students??[];
     return Scaffold(
       appBar: AppBar(
         title: Text("data"),
