@@ -33,3 +33,21 @@ class MyApp extends StatelessWidget {
 //TODO maybe we have err in the lojic of sing in since we send the hashed data
 //todo  not get the user and match the password or somthing like this
 //TODO move the sql to the models ask gpt before
+
+
+//TODO edit the marks and final marks to get the last seson
+
+
+
+/*
+* first in db create season
+*  then create group
+* then assign material to the group
+* if there a missing material add it
+* then add season student
+* if there is a new student add it in student
+* then add teacher role
+* if there is a new teacher add it in teacher
+* note the admin have group null and material null in the teacher role
+* 
+* */

@@ -1,3 +1,5 @@
+import 'package:dawara/models/student.dart';
+
 import 'material.dart';
 import 'season_student.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -5,10 +7,10 @@ part 'material_mark.g.dart';
 
 @JsonSerializable()
 class MaterialMark {
-  final SeasonStudent d_seasonStudent;
+  final Student d_student;
   final Material d_material;
-  final double mark;
-  MaterialMark({required this.mark, required this.d_seasonStudent, required this.d_material});
+  final double d_mark;
+  MaterialMark({required this.d_mark, required this.d_student, required this.d_material});
 
   factory MaterialMark.fromJson(Map<String, dynamic> json) =>
       _$MaterialMarkFromJson(json);

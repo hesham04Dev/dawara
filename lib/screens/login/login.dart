@@ -77,7 +77,7 @@ class Login extends StatelessWidget {
 
                               //TODO get result from db if true store it
 
-                             const  String query = "SELECT * from d_teacher where d_phone = ? and d_password =?";
+                             const  String query = "SELECT * from current_teacher where d_phone = ? and d_password =?";
                              List<Teacher> teachers = await DSql.instance().select(query,params:[phone,password],fromJson: (json) => Teacher.fromJson(json),);
 
                               if(teachers.isEmpty){

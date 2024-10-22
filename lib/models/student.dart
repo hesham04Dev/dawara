@@ -13,8 +13,6 @@ class Student{
    required this.d_address, this.d_problem, required this.d_id,required this.d_name,required this.d_age});
 
   factory  Student.fromJson(Map<String, dynamic> json) {
-    print(json);
-    print("1");
     return _$StudentFromJson(json);
   }
 

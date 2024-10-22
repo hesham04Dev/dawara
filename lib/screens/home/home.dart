@@ -16,6 +16,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
 
     List<Student> students = context.watch<StudentProvider>().students??[];
+
     return Scaffold(
       appBar: AppBar(
         title: Text("data"),
@@ -29,7 +30,7 @@ class Home extends StatelessWidget {
       body: ListView.builder(
         itemCount: students.length,
         itemBuilder: (context, index){
-       // List<MaterialMark> marks = DSql.instance().select("Select * from d_material_mark where d_season_student = ?",[students[index].id]);
+        List<MaterialMark> marks = DSql.instance().select("Select * from d_material_mark where d_season_student = ?",params:[students[index].d_id],fromJson: (json) => MaterialMark.fromJson(json) ,);
         //TODO get marks for each student in the group of this teacher
 
         return StudentCard(studentName: students[index].d_name, marks:[]) ;
